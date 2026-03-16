@@ -16,11 +16,11 @@ app.innerHTML = `
   ${About()}
   ${Experience()}
   ${Skills()}
-  ${Projects()}
   ${Contact()}
   ${Footer()}
-
 `
+
+app.insertBefore(Projects(), document.querySelector('#contact'))
 
 const projectsZone = document.querySelector('.projects-scroll-zone')
 
