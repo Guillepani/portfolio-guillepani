@@ -1,5 +1,4 @@
 import './Projects.css'
-
 import portfolio1 from '../../assets/projects/portfolio1.jpg'
 import portfolio2 from '../../assets/projects/portfolio2.jpg'
 import ktm1 from '../../assets/projects/ktm1.jpg'
@@ -42,7 +41,6 @@ const projects = [
     github: 'https://github.com/Guillepani/proyecto-4-portfolio'
   }
 ]
-
 export const Projects = () => {
   const section = document.createElement('section')
   section.className = 'projects'
@@ -58,7 +56,6 @@ export const Projects = () => {
           combinando diseño, lógica, maquetación responsive y consumo de APIs.
         </p>
       </div>
-
       <div class="projects-scroll-zone">
         <div class="projects-track">
           ${projects
@@ -102,6 +99,5 @@ export const Projects = () => {
       </div>
     </div>
   `
-
   return section
 }
