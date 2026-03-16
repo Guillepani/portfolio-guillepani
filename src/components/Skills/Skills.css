@@ -1,0 +1,23 @@
+.skills {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.skills h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.skills-list li {
+  background: #eee;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
