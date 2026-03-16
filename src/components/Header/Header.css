@@ -1,10 +1,25 @@
 header {
   width: 100%;
-  padding: 20px;
   background-color: #111;
   color: white;
 }
 
-header h1 {
-  font-size: 24px;
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav li {
+  cursor: pointer;
 }

@@ -3,7 +3,14 @@ import './Header.css'
 export const Header = () => {
   return `
     <header>
-      <h1>Mi Portfolio</h1>
+      <nav>
+        <h1>Mi Portfolio</h1>
+        <ul>
+          <li>Sobre mí</li>
+          <li>Proyectos</li>
+          <li>Contacto</li>
+        </ul>
+      </nav>
     </header>
   `
 }
