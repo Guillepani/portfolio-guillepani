@@ -5,6 +5,7 @@ import { About } from './components/About/About.js'
 import { Skills } from './components/Skills/Skills.js'
 import { Projects } from './components/Projects/Projects.js'
 import { Contact } from './components/Contact/Contact.js'
+import { Footer } from './components/Footer/Footer.js'
 
 const app = document.querySelector('#app')
 
@@ -15,4 +16,5 @@ app.innerHTML = `
   ${Skills()}
   ${Projects()}
   ${Contact()}
+  ${Footer()}
 `
