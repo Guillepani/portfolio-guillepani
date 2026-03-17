@@ -44,6 +44,15 @@ export const Projects = () => {
                     <h3>${project.title}</h3>
                     <p>${project.description}</p>
                     <div class="project-card__buttons">
+                      ${
+                        project.demo
+                          ? `
+                            <a href="${project.demo}" target="_blank" rel="noopener noreferrer">
+                              Probar demo
+                            </a>
+                          `
+                          : ''
+                      }
                       <a href="${project.github}" target="_blank" rel="noopener noreferrer">
                         Ver en GitHub
                       </a>
