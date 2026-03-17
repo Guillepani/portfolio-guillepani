@@ -2,6 +2,8 @@
 
 Portfolio personal desarrollado para el Proyecto 4 del bootcamp.
 
+Puedes verlo en vivo en este enlace ---> https://guillepani.netlify.app/
+
 ## Objetivo
 
 Construir una web tipo portfolio siguiendo el diseño propuesto, aplicando una estructura por componentes, buenas prácticas y diseño responsive.
