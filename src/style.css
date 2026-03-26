@@ -16,7 +16,6 @@
 }
 
 /* RESET GLOBAL */
-
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,6 @@ html {
 }
 
 /* BASE */
-
 body {
   min-height: 100vh;
   color: var(--text-main);
@@ -72,8 +70,7 @@ body {
   background-attachment: fixed;
 }
 
-/* CAPA SUAVE PARA DAR CONTINUIDAD */
-
+/* CAPA SUAVE PARA CONTINUIDAD */
 body::before {
   content: '';
   position: fixed;
@@ -92,7 +89,6 @@ body::before {
 }
 
 /* ELEMENTOS BASE */
-
 a {
   text-decoration: none;
   color: inherit;
@@ -119,7 +115,6 @@ section[id] {
 }
 
 /* TIPOGRAFÍA */
-
 h1,
 h2,
 h3 {
@@ -131,7 +126,6 @@ p {
 }
 
 /* TÍTULOS DE SECCIÓN */
-
 .section-title {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   text-align: center;
@@ -140,19 +134,4 @@ p {
     0 0 10px rgba(0, 217, 255, 0.35),
     0 0 25px rgba(123, 44, 255, 0.25);
   margin-bottom: 1rem;
-}
-
-/* CONTENEDOR CENTRAL OPCIONAL */
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* EFECTO GLOW REUTILIZABLE */
-
-.glow-border {
-  border: 1px solid var(--border-glow);
-  box-shadow: var(--shadow-glow);
-  border-radius: 14px;
 }
