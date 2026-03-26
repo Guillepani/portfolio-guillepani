@@ -6,7 +6,7 @@ import { Skills } from './components/Skills/Skills.js'
 import { Projects } from './components/Projects/Projects.js'
 import { Contact } from './components/Contact/Contact.js'
 import { Footer } from './components/Footer/Footer.js'
-import { Experience } from './components/Experience/Experience'
+import { Experience } from './components/Experience/Experience.js'
 
 const app = document.querySelector('#app')
 
