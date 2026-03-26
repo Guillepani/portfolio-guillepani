@@ -1,5 +1,7 @@
 import './Projects.css'
 import { projects } from '../../data/projectsData.js'
+import { ButtonLink } from '../ButtonLink/ButtonLink.js'
+import { SectionHeading } from '../SectionHeading/SectionHeading.js'
 
 export const Projects = () => {
   const section = document.createElement('section')
@@ -7,23 +9,14 @@ export const Projects = () => {
   section.id = 'projects'
 
   const container = document.createElement('div')
-  container.className = 'projects__container'
+  container.className = 'projects__container section-container'
 
-  const heading = document.createElement('div')
-  heading.className = 'projects__heading'
-
-  const tag = document.createElement('span')
-  tag.className = 'projects__tag'
-  tag.textContent = 'Portfolio'
-
-  const title = document.createElement('h2')
-  title.textContent = 'Proyectos'
-
-  const description = document.createElement('p')
-  description.textContent =
-    'Estos son algunos de los proyectos en los que he trabajado durante mi formación, combinando diseño, lógica, maquetación responsive y consumo de APIs.'
-
-  heading.append(tag, title, description)
+  const heading = SectionHeading(
+    'Proyectos',
+    'Estos son algunos de los proyectos en los que he trabajado durante mi formación, combinando diseño, lógica, maquetación responsive y consumo de APIs.',
+    'Portfolio'
+  )
+  heading.classList.add('projects__heading')
 
   const scrollZone = document.createElement('div')
   scrollZone.className = 'projects-scroll-zone'
@@ -66,20 +59,10 @@ export const Projects = () => {
     buttons.className = 'project-card__buttons'
 
     if (project.demo) {
-      const demoLink = document.createElement('a')
-      demoLink.href = project.demo
-      demoLink.target = '_blank'
-      demoLink.rel = 'noopener noreferrer'
-      demoLink.textContent = 'Probar demo'
-      buttons.appendChild(demoLink)
+      buttons.appendChild(ButtonLink('Probar demo', project.demo))
     }
 
-    const githubLink = document.createElement('a')
-    githubLink.href = project.github
-    githubLink.target = '_blank'
-    githubLink.rel = 'noopener noreferrer'
-    githubLink.textContent = 'Ver en GitHub'
-    buttons.appendChild(githubLink)
+    buttons.appendChild(ButtonLink('Ver en GitHub', project.github))
 
     content.append(projectTitle, projectDescription, buttons)
     article.append(imageWrapper, content)

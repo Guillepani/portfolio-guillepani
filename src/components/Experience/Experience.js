@@ -1,94 +1,122 @@
 import './Experience.css'
 
 export const Experience = () => {
-  return `
-    <section class="experience" id="experience">
-      <div class="experience-header">
-        <button class="experience-tab active" data-tab="exp">Experiencia</button>
-        <button class="experience-tab" data-tab="edu">Formación</button>
-      </div>
+  const section = document.createElement('section')
+  section.className = 'experience'
+  section.id = 'experience'
 
-      <div class="experience-content">
-        <div class="experience-panel active" id="exp">
-          <p class="experience-intro">
-            Mi camino profesional ha sido una evolución constante hasta llegar al punto
-            en el que decidí apostar de verdad por la tecnología.
-          </p>
+  // HEADER (tabs)
+  const header = document.createElement('div')
+  header.className = 'experience-header'
 
-          <article class="experience-item">
-            <h3>Primeras etapas laborales</h3>
-            <p>
-              Comencé trabajando como <strong>operario en distintas fábricas</strong>,
-              una etapa en la que desarrollé disciplina, responsabilidad y capacidad
-              para adaptarme a entornos exigentes.
-            </p>
-          </article>
+  const tabExp = document.createElement('button')
+  tabExp.className = 'experience-tab active'
+  tabExp.dataset.tab = 'exp'
+  tabExp.textContent = 'Experiencia'
 
-          <article class="experience-item">
-            <h3>Reinvención profesional</h3>
-            <p>
-              Con el tiempo sentí la necesidad de <strong>dar un giro a mi trayectoria</strong>.
-              La tecnología siempre me había llamado la atención, así que decidí orientar
-              mi camino hacia un sector que realmente me motivaba.
-            </p>
-          </article>
+  const tabEdu = document.createElement('button')
+  tabEdu.className = 'experience-tab'
+  tabEdu.dataset.tab = 'edu'
+  tabEdu.textContent = 'Formación'
 
-          <article class="experience-item">
-            <h3>Etapa de transición</h3>
-            <p>
-              Para poder compaginar trabajo y estudio, obtuve la
-              <strong> TIP de Vigilante de Seguridad</strong>, una decisión estratégica
-              que me permitió mantener estabilidad laboral mientras avanzaba en mi formación.
-            </p>
-          </article>
+  header.append(tabExp, tabEdu)
 
-          <article class="experience-item">
-            <h3>Objetivo actual</h3>
-            <p>
-              Hoy sigo construyendo ese cambio: trabajo, estudio programación y desarrollo
-              proyectos con la meta de dedicarme profesionalmente al
-              <strong> desarrollo web y de software</strong>.
-            </p>
-          </article>
-        </div>
+  // CONTENIDO
+  const content = document.createElement('div')
+  content.className = 'experience-content'
 
-        <div class="experience-panel" id="edu">
-          <p class="experience-intro">
-            Mi formación ha pasado por distintas etapas, pero todas han aportado algo a la
-            disciplina y mentalidad con la que afronto hoy mi camino en tecnología.
-          </p>
+  // PANEL EXPERIENCIA
+  const panelExp = document.createElement('div')
+  panelExp.className = 'experience-panel active'
+  panelExp.id = 'exp'
 
-          <article class="experience-item">
-            <h3>RockTheCode Full Stack Web</h3>
-            <p>
-              Actualmente cursando el programa <strong>Full Stack Web</strong> de <strong>ThePower Education</strong>,
-              enfocado en tecnologías web modernas y creación de proyectos reales.
-            </p>
-          </article>
+  const introExp = document.createElement('p')
+  introExp.className = 'experience-intro'
+  introExp.textContent =
+    'Mi camino profesional ha sido una evolución constante hasta llegar al punto en el que decidí apostar de verdad por la tecnología.'
 
-          <article class="experience-item">
-            <h3>Grado Superior en Actividades Físico-Deportivas</h3>
-            <p>
-              Una etapa que reforzó hábitos como la constancia, la planificación y la disciplina. Y ya no solo eso, es que no puedo evitar que el deporte me acompañe durante mi día a día.
-            </p>
-          </article>
+  panelExp.appendChild(introExp)
 
-          <article class="experience-item">
-            <h3>Grado Medio en Actividades Físicas en el Medio Natural</h3>
-            <p>
-              Formación orientada a la adaptación, la organización y el trabajo en diferentes contextos.
-            </p>
-          </article>
+  const expItems = [
+    {
+      title: 'Primeras etapas laborales',
+      text: `Comencé trabajando como <strong>operario en distintas fábricas</strong>, una etapa en la que desarrollé disciplina, responsabilidad y capacidad para adaptarme a entornos exigentes.`
+    },
+    {
+      title: 'Reinvención profesional',
+      text: `Con el tiempo sentí la necesidad de <strong>dar un giro a mi trayectoria</strong>. La tecnología siempre me había llamado la atención, así que decidí orientar mi camino hacia un sector que realmente me motivaba.`
+    },
+    {
+      title: 'Etapa de transición',
+      text: `Para poder compaginar trabajo y estudio, obtuve la <strong>TIP de Vigilante de Seguridad</strong>, una decisión estratégica que me permitió mantener estabilidad laboral mientras avanzaba en mi formación.`
+    },
+    {
+      title: 'Objetivo actual',
+      text: `Hoy sigo construyendo ese cambio: trabajo, estudio programación y desarrollo proyectos con la meta de dedicarme profesionalmente al <strong>desarrollo web y de software</strong>.`
+    }
+  ]
 
-          <article class="experience-item">
-            <h3>FP de Informática</h3>
-            <p>
-              Mi primer contacto académico con el mundo tecnológico, que con el tiempo ha vuelto
-              a convertirse en el eje principal de mi desarrollo profesional.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  `
+  expItems.forEach((item) => {
+    const article = document.createElement('article')
+    article.className = 'experience-item'
+
+    const h3 = document.createElement('h3')
+    h3.textContent = item.title
+
+    const p = document.createElement('p')
+    p.innerHTML = item.text
+
+    article.append(h3, p)
+    panelExp.appendChild(article)
+  })
+
+  // PANEL EDUCACIÓN
+  const panelEdu = document.createElement('div')
+  panelEdu.className = 'experience-panel'
+  panelEdu.id = 'edu'
+
+  const introEdu = document.createElement('p')
+  introEdu.className = 'experience-intro'
+  introEdu.textContent =
+    'Mi formación ha pasado por distintas etapas, pero todas han aportado algo a la disciplina y mentalidad con la que afronto hoy mi camino en tecnología.'
+
+  panelEdu.appendChild(introEdu)
+
+  const eduItems = [
+    {
+      title: 'RockTheCode Full Stack Web',
+      text: `Actualmente cursando el programa <strong>Full Stack Web</strong> de <strong>ThePower Education</strong>, enfocado en tecnologías web modernas y creación de proyectos reales.`
+    },
+    {
+      title: 'Grado Superior en Actividades Físico-Deportivas',
+      text: `Una etapa que reforzó hábitos como la constancia, la planificación y la disciplina. Y ya no solo eso, es que no puedo evitar que el deporte me acompañe durante mi día a día.`
+    },
+    {
+      title: 'Grado Medio en Actividades Físicas en el Medio Natural',
+      text: `Formación orientada a la adaptación, la organización y el trabajo en diferentes contextos.`
+    },
+    {
+      title: 'FP de Informática',
+      text: `Mi primer contacto académico con el mundo tecnológico, que con el tiempo ha vuelto a convertirse en el eje principal de mi desarrollo profesional.`
+    }
+  ]
+
+  eduItems.forEach((item) => {
+    const article = document.createElement('article')
+    article.className = 'experience-item'
+
+    const h3 = document.createElement('h3')
+    h3.textContent = item.title
+
+    const p = document.createElement('p')
+    p.innerHTML = item.text
+
+    article.append(h3, p)
+    panelEdu.appendChild(article)
+  })
+
+  content.append(panelExp, panelEdu)
+  section.append(header, content)
+
+  return section
 }

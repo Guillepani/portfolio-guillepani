@@ -10,18 +10,18 @@ import { Experience } from './components/Experience/Experience.js'
 
 const app = document.querySelector('#app')
 
-app.innerHTML = `
-  ${Header()}
-  ${Hero()}
-  ${About()}
-  ${Experience()}
-  ${Skills()}
-  ${Contact()}
-  ${Footer()}
-`
+app.append(
+  Header(),
+  Hero(),
+  About(),
+  Experience(),
+  Skills(),
+  Projects(),
+  Contact(),
+  Footer()
+)
 
-app.insertBefore(Projects(), document.querySelector('#contact'))
-
+// SCROLL PROYECTOS
 const projectsZone = document.querySelector('.projects-scroll-zone')
 
 if (projectsZone) {
@@ -63,6 +63,7 @@ if (projectsZone) {
   })
 }
 
+// TABS EXPERIENCE
 const experienceTabs = document.querySelectorAll('.experience-tab')
 const experiencePanels = document.querySelectorAll('.experience-panel')
 

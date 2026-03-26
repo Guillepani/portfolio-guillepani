@@ -1,43 +1,66 @@
 import './Skills.css'
 
 export const Skills = () => {
-  return `
-    <section class="skills" id="skills">
-      <h2>Skills</h2>
+  const section = document.createElement('section')
+  section.className = 'skills'
+  section.id = 'skills'
 
-      <ul class="skills-list">
+  const title = document.createElement('h2')
+  title.className = 'section-title'
+  title.textContent = 'Skills'
 
-        <li class="skill-card html">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-          <span>HTML</span>
-        </li>
+  const list = document.createElement('ul')
+  list.className = 'skills-list'
 
-        <li class="skill-card css">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-          <span>CSS</span>
-        </li>
+  const skills = [
+    {
+      name: 'HTML',
+      class: 'html',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+    },
+    {
+      name: 'CSS',
+      class: 'css',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+    },
+    {
+      name: 'JavaScript',
+      class: 'js',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+    },
+    {
+      name: 'Git',
+      class: 'git',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+    },
+    {
+      name: 'React',
+      class: 'react',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+    },
+    {
+      name: 'Node.js',
+      class: 'node',
+      img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+    }
+  ]
 
-        <li class="skill-card js">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-          <span>JavaScript</span>
-        </li>
+  skills.forEach((skill) => {
+    const li = document.createElement('li')
+    li.className = `skill-card ${skill.class}`
 
-        <li class="skill-card git">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-          <span>Git</span>
-        </li>
+    const img = document.createElement('img')
+    img.src = skill.img
+    img.alt = skill.name
 
-        <li class="skill-card react">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-          <span>React</span>
-        </li>
+    const span = document.createElement('span')
+    span.textContent = skill.name
 
-        <li class="skill-card node">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-          <span>Node.js</span>
-        </li>
+    li.append(img, span)
+    list.appendChild(li)
+  })
 
-      </ul>
-    </section>
-  `
+  section.append(title, list)
+
+  return section
 }

@@ -1,18 +1,34 @@
 import './Header.css'
 
 export const Header = () => {
-  return `
-    <header>
-      <nav>
-        <h1>Guillem Paniagua</h1>
+  const header = document.createElement('header')
 
-        <ul>
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
+  const nav = document.createElement('nav')
 
-      </nav>
-    </header>
-  `
+  const title = document.createElement('h1')
+  title.textContent = 'Guillem Paniagua'
+
+  const ul = document.createElement('ul')
+
+  const links = [
+    { text: 'Sobre mí', href: '#about' },
+    { text: 'Proyectos', href: '#projects' },
+    { text: 'Contacto', href: '#contact' }
+  ]
+
+  links.forEach((linkData) => {
+    const li = document.createElement('li')
+
+    const a = document.createElement('a')
+    a.href = linkData.href
+    a.textContent = linkData.text
+
+    li.appendChild(a)
+    ul.appendChild(li)
+  })
+
+  nav.append(title, ul)
+  header.appendChild(nav)
+
+  return header
 }

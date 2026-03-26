@@ -1,9 +1,13 @@
 import './Footer.css'
 
 export const Footer = () => {
-  return `
-    <footer class="footer">
-      <p>© 2026 Guillem Paniagua</p>
-    </footer>
-  `
+  const footer = document.createElement('footer')
+  footer.className = 'footer'
+
+  const text = document.createElement('p')
+  text.textContent = '© 2026 Guillem Paniagua'
+
+  footer.appendChild(text)
+
+  return footer
 }

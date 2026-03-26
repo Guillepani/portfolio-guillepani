@@ -1,26 +1,46 @@
 import './Hero.css'
 
 export const Hero = () => {
-  return `
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <p class="hero-code">console.log("Construyendo mi futuro en el desarrollo web");</p>
+  const section = document.createElement('section')
+  section.className = 'hero'
+  section.id = 'hero'
 
-        <h2>
-          Desarrollo interfaces modernas y convierto ideas en
-          <span>proyectos reales</span>
-        </h2>
+  const content = document.createElement('div')
+  content.className = 'hero-content'
 
-        <p class="hero-text">
-          Actualmente compagino trabajo y formación mientras construyo mi camino como
-          desarrollador web, con foco en diseño, funcionalidad y evolución constante.
-        </p>
+  const code = document.createElement('p')
+  code.className = 'hero-code'
+  code.textContent =
+    'console.log("Construyendo mi futuro en el desarrollo web");'
 
-        <div class="hero-buttons">
-          <a href="#projects" class="hero-btn primary">Ver proyectos</a>
-          <a href="#contact" class="hero-btn secondary">Contactar</a>
-        </div>
-      </div>
-    </section>
+  const title = document.createElement('h2')
+  title.innerHTML = `
+    Desarrollo interfaces modernas y convierto ideas en
+    <span>proyectos reales</span>
   `
+
+  const text = document.createElement('p')
+  text.className = 'hero-text'
+  text.textContent =
+    'Actualmente compagino trabajo y formación mientras construyo mi camino como desarrollador web, con foco en diseño, funcionalidad y evolución constante.'
+
+  const buttons = document.createElement('div')
+  buttons.className = 'hero-buttons'
+
+  const btnProjects = document.createElement('a')
+  btnProjects.href = '#projects'
+  btnProjects.className = 'hero-btn primary'
+  btnProjects.textContent = 'Ver proyectos'
+
+  const btnContact = document.createElement('a')
+  btnContact.href = '#contact'
+  btnContact.className = 'hero-btn secondary'
+  btnContact.textContent = 'Contactar'
+
+  buttons.append(btnProjects, btnContact)
+
+  content.append(code, title, text, buttons)
+  section.appendChild(content)
+
+  return section
 }

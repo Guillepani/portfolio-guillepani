@@ -1,31 +1,62 @@
 import './Contact.css'
 
 export const Contact = () => {
-  return `
-    <section class="contact" id="contact">
-      <h2>Contacto</h2>
-      <p>¿Hablamos? Puedes escribirme para colaboraciones, proyectos o cualquier propuesta interesante.</p>
+  const section = document.createElement('section')
+  section.className = 'contact'
+  section.id = 'contact'
 
-      <ul class="contact-list">
-        <li>
-          <strong>Email:</strong> 
-          <a href="mailto:guillempaniagua@gmail.com">guillempaniagua@gmail.com</a>
-        </li>
+  const title = document.createElement('h2')
+  title.className = 'section-title'
+  title.textContent = 'Contacto'
 
-        <li>
-          <strong>LinkedIn:</strong> 
-          <a href="https://www.linkedin.com/in/guillem-paniagua-2ab458358/" target="_blank">
-            linkedin.com/in/guillem-paniagua
-          </a>
-        </li>
+  const description = document.createElement('p')
+  description.textContent =
+    '¿Hablamos? Puedes escribirme para colaboraciones, proyectos o cualquier propuesta interesante.'
 
-        <li>
-          <strong>GitHub:</strong> 
-          <a href="https://github.com/Guillepani" target="_blank">
-            github.com/Guillepani
-          </a>
-        </li>
-      </ul>
-    </section>
-  `
+  const list = document.createElement('ul')
+  list.className = 'contact-list'
+
+  // EMAIL
+  const emailItem = document.createElement('li')
+
+  const emailStrong = document.createElement('strong')
+  emailStrong.textContent = 'Email: '
+
+  const emailLink = document.createElement('a')
+  emailLink.href = 'mailto:guillempaniagua@gmail.com'
+  emailLink.textContent = 'guillempaniagua@gmail.com'
+
+  emailItem.append(emailStrong, emailLink)
+
+  // LINKEDIN
+  const linkedinItem = document.createElement('li')
+
+  const linkedinStrong = document.createElement('strong')
+  linkedinStrong.textContent = 'LinkedIn: '
+
+  const linkedinLink = document.createElement('a')
+  linkedinLink.href = 'https://www.linkedin.com/in/guillem-paniagua-2ab458358/'
+  linkedinLink.target = '_blank'
+  linkedinLink.textContent = 'linkedin.com/in/guillem-paniagua'
+
+  linkedinItem.append(linkedinStrong, linkedinLink)
+
+  // GITHUB
+  const githubItem = document.createElement('li')
+
+  const githubStrong = document.createElement('strong')
+  githubStrong.textContent = 'GitHub: '
+
+  const githubLink = document.createElement('a')
+  githubLink.href = 'https://github.com/Guillepani'
+  githubLink.target = '_blank'
+  githubLink.textContent = 'github.com/Guillepani'
+
+  githubItem.append(githubStrong, githubLink)
+
+  // MONTAJE
+  list.append(emailItem, linkedinItem, githubItem)
+  section.append(title, description, list)
+
+  return section
 }
